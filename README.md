@@ -1,6 +1,17 @@
 # IntroAI_Project
 人工智能导论课程项目作业
 
+## LLM模型api
+
+### 1.获取api
+前往[讯飞星火](https://xinghuo.xfyun.cn/sparkapi)创建应用获取https服务接口的apipassword与接口地址
+
+### 2.设置环境变量
+```bash
+set LLM_PROMPT_API_URL your_url
+set LLM_PROMPT_API_PASSWORD your_password
+```
+
 ## 后端
 
 ### 1.创建虚拟环境
