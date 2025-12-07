@@ -4,7 +4,7 @@
 ## LLM模型api
 
 ### 1.获取api
-前往[讯飞星火](https://xinghuo.xfyun.cn/sparkapi)创建应用获取https服务接口的apipassword与接口地址
+前往<a href = "https://xinghuo.xfyun.cn/sparkapi" target = "_blank">讯飞星火</a>获取apipassword与接口地址(https)
 
 ### 2.设置环境变量
 ```bash
@@ -37,7 +37,7 @@ python app.py
 ## 前端
 
 ### 1.下载nvm
-前往[nvm-windows](https://github.com/coreybutler/nvm-windows/releases)下载
+前往<a href = "https://github.com/coreybutler/nvm-windows/releases" target = "_blank">nvm-windows</a>下载
 
 ### 2.安装Node.js
 ```bash
