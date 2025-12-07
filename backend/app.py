@@ -6,26 +6,30 @@ from model import generate_painting
 app = Flask(__name__)
 CORS(app)
 
-@app.get("/api/ping")
-def ping():
-    return jsonify({"msg": "backend is ok"})
+@app.route('/')
+def index():
+    return "Welcome to the Painting Generator API"
 
-@app.post("/api/generate")
+@app.route('/api/ping')
+def ping():
+    return jsonify({"msg": "backend is fine"})
+
+@app.route('/api/generate', methods=['POST'])
 def generate():
     data = request.get_json()
-    prompt = data.get("prompt")
+    text = data.get('text')
 
-    if not prompt:
-        return jsonify({"error": "Missing prompt"}), 400
+    if not text:
+        return jsonify({'error': 'No text provided'}), 400
 
-    improved_prompt = poem_to_landscape(prompt)
+    prompt = poem_to_landscape(text)
 
-    image_base64 = generate_painting(improved_prompt)
+    image = generate_painting(prompt)
 
     return jsonify({
-        "prompt": improved_prompt,
-        "image": image_base64
+        'prompt': prompt,
+        'image': image
     })
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(host="0.0.0.0", port=5000)
